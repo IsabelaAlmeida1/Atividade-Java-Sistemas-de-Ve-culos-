@@ -1,0 +1,45 @@
+public class Main {
+
+    // Classe Veiculo
+    static class Veiculo {
+        String marca;
+        int ano;
+
+        public Veiculo(String marca, int ano) {
+            this.marca = marca;
+            this.ano = ano;
+        }
+
+        public void exibirDados() {
+            System.out.println("Marca: " + marca);
+            System.out.println("Ano: " + ano);
+        }
+    }
+
+    // Classe Carro
+    static class Carro extends Veiculo {
+        int portas;
+
+        public Carro(String marca, int ano, int portas) {
+            super(marca, ano);
+            this.portas = portas;
+        }
+
+        // Método específico das portas
+        public void exibirPortas() {
+            System.out.println("Quantidade de portas: " + portas);
+        }
+
+        // Método completo (tudo junto)
+        public void exibirTudo() {
+            exibirDados(); // chama da classe pai
+            exibirPortas();
+        }
+    }
+
+    public static void main(String[] args) {
+        Carro carro = new Carro("Toyota", 2022, 4);
+
+        carro.exibirTudo(); // mostra tudo de uma vez
+    }
+}
