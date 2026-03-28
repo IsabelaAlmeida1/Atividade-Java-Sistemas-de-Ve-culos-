@@ -1,0 +1,45 @@
+public class Main {
+
+    // Classe Veiculo
+    static class Veiculo {
+        String marca;
+        int ano;
+
+        public Veiculo(String marca, int ano) {
+            this.marca = marca;
+            this.ano = ano;
+        }
+
+        public void exibirDados() {
+            System.out.println("Marca: " + marca);
+            System.out.println("Ano: " + ano);
+        }
+    }
+
+    // Classe Moto
+    static class Moto extends Veiculo {
+        int cilindradas;
+
+        public Moto(String marca, int ano, int cilindradas) {
+            super(marca, ano);
+            this.cilindradas = cilindradas;
+        }
+
+        public void exibirCilindradas() {
+            System.out.println("Cilindradas: " + cilindradas);
+        }
+
+        public void exibirTudo() {
+            exibirDados();
+            exibirCilindradas();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Moto moto = new Moto("Honda", 2021, 160);
+
+        System.out.println("=== Moto ===");
+        moto.exibirTudo();
+    }
+}
